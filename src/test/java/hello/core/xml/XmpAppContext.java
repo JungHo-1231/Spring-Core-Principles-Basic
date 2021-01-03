@@ -8,14 +8,14 @@ import org.springframework.context.support.GenericXmlApplicationContext;
 
 public class XmpAppContext {
     
-    @Test
-    void xmlAppContext(){
-    
-        //given
-        ApplicationContext ac = new GenericXmlApplicationContext("appConfig.xml");
-        //when
-        MemberService memberService = ac.getBean("memberService", MemberService.class);
-        //then
-        Assertions.assertThat(memberService).isInstanceOf(MemberService.class);
-    }
+//    @Test
+//    void xmlAppContext(){
+//
+//        //given
+//        ApplicationContext ac = new GenericXmlApplicationContext("appConfig.xml");
+//        //when
+//        MemberService memberService = ac.getBean("memberService", MemberService.class);
+//        //then
+//        Assertions.assertThat(memberService).isInstanceOf(MemberService.class);
+//    }
 }

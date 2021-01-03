@@ -24,7 +24,7 @@ public class ApplicationContextExtendFindTest {
     void findBeanByParentTypeDuplicate(){
         //given
         //when
-        DiscountPolicy bean = ac.getBean(DiscountPolicy.class);
+//        DiscountPolicy bean = ac.getBean(DiscountPolicy.class);
         //then
         assertThrows(NoUniqueBeanDefinitionException.class,
                 ()-> ac.getBean(DiscountPolicy.class));
@@ -55,7 +55,7 @@ public class ApplicationContextExtendFindTest {
     static class TestConfig{
         
         @Bean
-        public DiscountPolicy reteDiscountPolicy(){
+        public DiscountPolicy rateDiscountPolicy(){
             return new RateDiscountPolicy();
         }
 

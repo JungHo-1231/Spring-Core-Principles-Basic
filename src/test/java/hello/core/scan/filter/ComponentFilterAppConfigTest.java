@@ -1,13 +1,12 @@
 package hello.core.scan.filter;
 
+import hello.core.member.MemberRepository;
+import hello.core.member.MemoryMemberRepository;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.NoSuchBeanDefinitionException;
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.FilterType;
+import org.springframework.context.annotation.*;
 
 public class ComponentFilterAppConfigTest {
 
@@ -34,7 +33,10 @@ public class ComponentFilterAppConfigTest {
                             classes = MyExcludeComponent.class)
     )
     static class ComponentFilterAppConfig{
-
+        @Bean(name = "memoryMemberRepository")
+        public MemberRepository memberRepository() {
+            return new MemoryMemberRepository();
+        }
     }
 
 }
